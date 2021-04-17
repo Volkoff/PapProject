@@ -12,7 +12,9 @@ public class CameraScript : MonoBehaviour
     {
         
     }
-
+    /// <summary>
+    /// Cursor stays in the centre position
+    /// </summary>
     void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
