@@ -6,6 +6,7 @@ public class Chest : Interactible
 {
     protected override void OnInteracted()
     {
+        base.OnInteracted();
         print("On chest interacted");
     }
 } 

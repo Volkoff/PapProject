@@ -4,14 +4,31 @@ using UnityEngine;
 
 public class Interactible : MonoBehaviour
 {
+    bool isPlayerInRange = false;
     void Update()
     {
         CheckForInteraction();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            isPlayerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            isPlayerInRange = false;
+        }
+    }
+
     void CheckForInteraction()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
             OnInteracted();
         }
