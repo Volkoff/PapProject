@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeverPulling : MonoBehaviour
+public class LeverPulling : Interactible
 {
-    // Start is called before the first frame update
-    void Start()
+    bool LeverPulled = false;
+    protected override void OnInteracted()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.OnInteracted();
+        print("Lever was pulled");
+        LeverPulled = true;
     }
 }
