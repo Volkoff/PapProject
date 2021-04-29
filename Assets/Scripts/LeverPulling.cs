@@ -4,11 +4,25 @@ using UnityEngine;
 
 public class LeverPulling : Interactible
 {
+    public GameObject LeverDown;
+    public GameObject LeverUp;
     bool LeverPulled = false;
+
+    void Start()
+    {
+        UpdateStateOfLever();
+    }
+
     protected override void OnInteracted()
     {
-        base.OnInteracted();
-        print("Lever was pulled");
-        LeverPulled = true;
+        LeverPulled = !LeverPulled;
+        print("Lever was pulled " + LeverPulled);
+        UpdateStateOfLever();
+    }
+
+    private void UpdateStateOfLever()
+    {
+        LeverDown.SetActive(LeverPulled);
+        LeverUp.SetActive(!LeverPulled);
     }
 }
