@@ -42,5 +42,10 @@ public class Movement : MonoBehaviour
         {
             rb.AddForce(0, jumpForce, 0);
         }
+         if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+    
     }
 }

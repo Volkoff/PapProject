@@ -6,7 +6,8 @@ public class LeverPulling : Interactible
 {
     public GameObject LeverDown;
     public GameObject LeverUp;
-    bool LeverPulled = false;
+    public GameObject cube;
+    public bool LeverPulled = false;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class LeverPulling : Interactible
         LeverPulled = !LeverPulled;
         print("Lever was pulled " + LeverPulled);
         UpdateStateOfLever();
+        cube.SetActive(false);
     }
 
     private void UpdateStateOfLever()
