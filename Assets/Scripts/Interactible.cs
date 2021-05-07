@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Interactible : MonoBehaviour
 {
+    public GameObject instruction;
     bool isPlayerInRange = false;
     void Update()
     {
@@ -15,6 +16,7 @@ public class Interactible : MonoBehaviour
         if(other.tag == "Player")
         {
             isPlayerInRange = true;
+            instruction.SetActive(true);
         }
     }
 
@@ -23,6 +25,7 @@ public class Interactible : MonoBehaviour
         if(other.tag == "Player")
         {
             isPlayerInRange = false;
+            instruction.SetActive(false);
         }
     }
 
