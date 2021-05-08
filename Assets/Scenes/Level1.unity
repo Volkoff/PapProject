@@ -1135,7 +1135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0f34415be13a741a3105ccddb5caa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Finish: {fileID: 2114287872}
 --- !u!4 &203579414 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 459816, guid: aae542b8a65f39b49b008fa689ce9804, type: 3}
@@ -1897,12 +1896,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: PiratesChest_A1
       objectReference: {fileID: 0}
-    - target: {fileID: 1319519773033831094, guid: 62d3a4c3b59e3334087219b6b6c95aad, type: 3}
-      propertyPath: Finish
-      value: 
-      objectReference: {fileID: 2114287872}
-    m_RemovedComponents:
-    - {fileID: 1319519773033831094, guid: 62d3a4c3b59e3334087219b6b6c95aad, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62d3a4c3b59e3334087219b6b6c95aad, type: 3}
 --- !u!4 &517526161 stripped
 Transform:
