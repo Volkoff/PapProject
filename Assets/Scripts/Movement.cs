@@ -5,10 +5,12 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float camRotY;
-    public float speed = 0.08f;
-    public float jumpForce = 0.5f;
+    public float speed = 0.2f;
+    public float jumpForce = 10f;
     public float sensitivity = 2;
 
+    public Vector3 jump = new Vector3(0.0f, 2.0f, 0.0f);
+    public bool isGrounded;
     private Rigidbody rb;
 
     // Start is called before the first frame update
@@ -22,6 +24,11 @@ public class Movement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    void OnCollisionStay()
+    {
+        isGrounded = true;
     }
 
     // Update is called once per frame
@@ -38,14 +45,21 @@ public class Movement : MonoBehaviour
         {
             transform.Translate(0, 0, speed * Input.GetAxis("Vertical"));
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(0, jumpForce, 0);
-        }
-         if (Input.GetKey("escape"))
+        if (Input.GetKey(KeyCode.Escape))
         {
             Application.Quit();
         }
-    
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+        if (Input.GetKey(KeyCode.LeftShift)) 
+        {
+            speed = 0.6f;
+        } else
+        {
+            speed = 0.2f;
+        }
     }
 }
