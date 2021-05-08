@@ -5934,7 +5934,6 @@ GameObject:
   - component: {fileID: 1467165211}
   - component: {fileID: 1467165210}
   - component: {fileID: 1467165209}
-  - component: {fileID: 1467165208}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -5942,24 +5941,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1467165208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467165207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73f3ecf8abf51bd408e16cd04fdc1afc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayerInRange: 0
-  LeverDown: {fileID: 0}
-  LeverUp: {fileID: 0}
-  LeverPulled: 0
-  False: {fileID: 0}
-  True: {fileID: 0}
 --- !u!65 &1467165209
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7762,8 +7743,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camRotY: 0
   speed: 0.08
-  jumpForce: 0.5
+  jumpForce: 4
   sensitivity: 2
+  jump: {x: 0, y: 2, z: 0}
+  isGrounded: 0
 --- !u!1001 &2018304092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8204,7 +8187,6 @@ GameObject:
   - component: {fileID: 2114287873}
   - component: {fileID: 2114287875}
   - component: {fileID: 2114287874}
-  - component: {fileID: 2114287876}
   m_Layer: 5
   m_Name: TheEnd
   m_TagString: Finish
@@ -8273,21 +8255,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114287872}
   m_CullTransparentMesh: 1
---- !u!114 &2114287876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114287872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a207697f0094f1d428c94aa243e88489, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayerInRange: 0
-  EndGame: 0
-  Finish: {fileID: 2114287872}
 --- !u!1001 &2130248783
 PrefabInstance:
   m_ObjectHideFlags: 0
