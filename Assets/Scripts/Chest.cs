@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Chest : Interactible
 {
-    public GameObject Finish;
     void start(){
         
     }
@@ -12,6 +12,6 @@ public class Chest : Interactible
     {
         base.OnInteracted();
         print("On chest interacted");
-        Finish.SetActive(true);
+        SceneManager.LoadScene ("Level2");
     }
 } 

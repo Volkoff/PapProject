@@ -5,8 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float camRotY;
-    public float speed = 0.2f;
-    public float jumpForce = 10f;
+    public float speed = 0.05f;
+    public float jumpForce = 5f;
     public float sensitivity = 2;
 
     public Vector3 jump = new Vector3(0.0f, 2.0f, 0.0f);
@@ -37,7 +37,8 @@ public class Movement : MonoBehaviour
         camRotY += sensitivity * Input.GetAxis("Mouse X");
         transform.localEulerAngles = new Vector3(0, camRotY, 0);
 
-        if (Input.GetAxis("Horizontal") != 0)
+
+        if (Input.GetAxis("Horizontal") != 0 && isGrounded)
         {
             gameObject.transform.Translate(speed * Input.GetAxis("Horizontal"), 0, 0);
         }
@@ -56,10 +57,10 @@ public class Movement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftShift)) 
         {
-            speed = 0.6f;
+            speed = 0.1f;
         } else
         {
-            speed = 0.2f;
+            speed = 0.05f;
         }
     }
 }

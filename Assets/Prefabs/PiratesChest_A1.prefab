@@ -215,7 +215,6 @@ GameObject:
   - component: {fileID: 1305101651449782656}
   - component: {fileID: 1344014383513198732}
   - component: {fileID: 1319519773033831100}
-  - component: {fileID: 1319519773033831094}
   - component: {fileID: 1319519773033831101}
   m_Layer: 0
   m_Name: PiratesChest_A1
@@ -316,18 +315,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.44701076
   m_Center: {x: 0.008586466, y: 0.26047572, z: 0.05806312}
---- !u!114 &1319519773033831094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1318291439475423040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad0f34415be13a741a3105ccddb5caa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1319519773033831101
 MonoBehaviour:
   m_ObjectHideFlags: 0
