@@ -8,7 +8,7 @@ public class LeverPulling : Interactible
     public GameObject LeverUp;
     public GameObject cube;
     public bool LeverPulled = false;
-
+    
     void Start()
     {
         UpdateStateOfLever();

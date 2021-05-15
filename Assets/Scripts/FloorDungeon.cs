@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine;
 
-public class FloorDungeon : Interactible
+public class FloorDungeon : LeverPulling
 {
     bool isPlayerInRange = false;
-    void Start()
-    {
-        
-    }
+    public GameObject tip;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -30,12 +27,24 @@ public class FloorDungeon : Interactible
 
     private void Restart(bool isPlayerInRange)
     {
-        if(isPlayerInRange)
+        if(isPlayerInRange && LeverPulled)
         {
-            SceneManager.LoadScene(sceneName:"Dungeon");
-        }
+            reset();
+        } else
+        {
+            tip.SetActive(true);
+            RemoveAfterSeconds(4,tip);
+        } 
     }
-    // Update is called once per frame
+        
+    private void reset(){
+        SceneManager.LoadScene(sceneName:"Dungeon");
+    }
+    IEnumerator RemoveAfterSeconds (int seconds, GameObject obj){
+        yield return new WaitForSeconds(seconds);
+        obj.SetActive(false);
+        reset();
+    }
     void Update()
     {
         

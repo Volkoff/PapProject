@@ -14,6 +14,7 @@ public class Chest : Interactible
         SceneManager.LoadScene(sceneName:"Dungeon");
     }
 
+
     void Update()
     {
         if(Input.GetKey(KeyCode.Escape))
