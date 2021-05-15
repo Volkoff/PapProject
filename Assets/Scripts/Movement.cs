@@ -21,7 +21,10 @@ public class Movement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
     }
-
+    void OnCollisionStay()
+    {
+        isGrounded = true;
+    }
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
