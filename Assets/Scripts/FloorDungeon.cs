@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class FloorDungeon : LeverPulling
 {
+    private IEnumerator coroutine;
     bool isPlayerInRange = false;
     public GameObject tip;
 
@@ -33,7 +34,8 @@ public class FloorDungeon : LeverPulling
         } else
         {
             tip.SetActive(true);
-            RemoveAfterSeconds(4,tip);
+            coroutine = RemoveAfterSeconds(2,tip);
+            StartCoroutine(coroutine);
         } 
     }
         

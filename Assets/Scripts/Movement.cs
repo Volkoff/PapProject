@@ -5,11 +5,7 @@ using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     public float camRotY;
-<<<<<<< HEAD
-    public float speed = 0.2f;
-=======
     public float speed = 0.02f;
->>>>>>> c975ee6fc8cc64ad4e7a416db4973a7e6c2b5d2e
     public float jumpForce = 10f;
     public float sensitivity = 2;
     int check;
@@ -34,13 +30,6 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-<<<<<<< HEAD
-    void OnCollisionStay()
-    {
-        isGrounded = true;
-    }
-
-=======
     string PrevScene = "Level1";
     void SceneManage(int check){
         if(check == 1){
@@ -50,7 +39,6 @@ public class Movement : MonoBehaviour
             SceneManager.LoadScene(PrevScene);
         }
     }
->>>>>>> c975ee6fc8cc64ad4e7a416db4973a7e6c2b5d2e
     // Update is called once per frame
     void Update()
     {
@@ -75,22 +63,6 @@ public class Movement : MonoBehaviour
             transform.Translate(0, 0, speed * Input.GetAxis("Vertical"));
         }
         if (Input.GetKey(KeyCode.Escape))
-<<<<<<< HEAD
-        {
-            Application.Quit();
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
-        }
-        if (Input.GetKey(KeyCode.LeftShift)) 
-        {
-            speed = 0.6f;
-        } else
-        {
-            speed = 0.2f;
-=======
         {
             Application.Quit();
         }
@@ -105,7 +77,6 @@ public class Movement : MonoBehaviour
         } else
         {
             speed = 0.02f;
->>>>>>> c975ee6fc8cc64ad4e7a416db4973a7e6c2b5d2e
         }
     }
 }
