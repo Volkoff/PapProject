@@ -18,7 +18,7 @@ public class Chest : Interactible
     {
         if(Input.GetKey(KeyCode.Escape))
         {
-             SceneManager.LoadScene (sceneName:"WinScene");
+             SceneManager.LoadScene (sceneName:"Escape screen");
         }
     }
 } 
