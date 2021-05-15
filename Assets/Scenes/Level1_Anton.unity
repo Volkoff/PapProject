@@ -140,6 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0f34415be13a741a3105ccddb5caa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instruction: {fileID: 0}
+  Finish: {fileID: 0}
 --- !u!114 &41171836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8178008ed3b4542b8e84bf8299a7dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instruction: {fileID: 0}
 --- !u!135 &41171837
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -276,8 +279,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1fa67830b3e4b41851ff177552ffd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instruction: {fileID: 0}
   LeverDown: {fileID: 1587485800}
   LeverUp: {fileID: 590551061}
+  cube: {fileID: 0}
+  LeverPulled: 0
 --- !u!1 &590551061 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8084267456049533178, guid: f3272fc516e8722459dcece4c50b18d3, type: 3}
@@ -1037,6 +1043,8 @@ MonoBehaviour:
   speed: 0.08
   jumpForce: 0.5
   sensitivity: 2
+  jump: {x: 0, y: 2, z: 0}
+  isGrounded: 0
 --- !u!1001 &2279354132951030354
 PrefabInstance:
   m_ObjectHideFlags: 0

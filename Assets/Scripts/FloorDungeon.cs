@@ -1,44 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine;
 
-public class Interactible : MonoBehaviour
+public class FloorDungeon : Interactible
 {
-    public GameObject instruction;
     bool isPlayerInRange = false;
-    void Update()
+    void Start()
     {
-        CheckForInteraction();
+        
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
             isPlayerInRange = true;
-            instruction.SetActive(true);
+            Restart(isPlayerInRange);
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if(other.tag == "Player")
         {
             isPlayerInRange = false;
-            instruction.SetActive(false);
+            Restart(isPlayerInRange);
         }
     }
 
-    void CheckForInteraction()
+    private void Restart(bool isPlayerInRange)
     {
-        if(isPlayerInRange && Input.GetKeyDown(KeyCode.E))
+        if(isPlayerInRange)
         {
-            OnInteracted();
+            SceneManager.LoadScene(sceneName:"Dungeon");
         }
     }
-
-    protected virtual void OnInteracted()
+    // Update is called once per frame
+    void Update()
     {
-        print("On interacted");
+        
+        
     }
 }
