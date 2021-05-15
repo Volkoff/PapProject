@@ -6011,6 +6011,7 @@ GameObject:
   - component: {fileID: 1467165211}
   - component: {fileID: 1467165210}
   - component: {fileID: 1467165209}
+  - component: {fileID: 1467165208}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -7770,8 +7771,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camRotY: 0
-  speed: 0.08
-  jumpForce: 4
+  speed: 0.02
+  jumpForce: 10
   sensitivity: 2
   jump: {x: 0, y: 2, z: 0}
   isGrounded: 0
@@ -8215,6 +8216,7 @@ GameObject:
   - component: {fileID: 2114287873}
   - component: {fileID: 2114287875}
   - component: {fileID: 2114287874}
+  - component: {fileID: 2114287876}
   m_Layer: 5
   m_Name: TheEnd
   m_TagString: Finish
