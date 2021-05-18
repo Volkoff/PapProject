@@ -8,7 +8,11 @@ public class Movement : MonoBehaviour
     public float speed = 0.02f;
     public float jumpForce = 5f;
     public float sensitivity = 2;
+    private float sprintTimer = 0f;
+
+    bool sprinting = true;
     int check;
+    private IEnumerator coroutine;
 
     public Vector3 jump = new Vector3(0.0f, 2.0f, 0.0f);
     public bool isGrounded;
@@ -71,12 +75,26 @@ public class Movement : MonoBehaviour
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
         }
-        if (Input.GetKey(KeyCode.LeftShift)) 
-        {
-            speed = 0.06f;
-        } else
-        {
-            speed = 0.02f;
+        
+        if (Input.GetKey(KeyCode.LeftShift) && isGrounded) 
+        {   
+            if(sprinting){
+                Invoke("updateTimer",1);
+                sprinting = false;
+            }
+            if(sprintTimer<3){
+                speed = 0.06f;
+            }else{
+                speed = 0.02f;
+            }
+        } 
+}
+void updateTimer(){
+            if(sprintTimer >=3){
+                sprintTimer = 0;
+            }
+            sprintTimer++;
+            sprinting = true;
+            
         }
-    }
 }
