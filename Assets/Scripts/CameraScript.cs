@@ -7,11 +7,7 @@ public class CameraScript : MonoBehaviour
 
     float sensitivity = 5;
     float camRotX;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
     /// <summary>
     /// Cursor stays in the centre position
     /// </summary>
@@ -20,7 +16,6 @@ public class CameraScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
         camRotX -= sensitivity * Input.GetAxis("Mouse Y");

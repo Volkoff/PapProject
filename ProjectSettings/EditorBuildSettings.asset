@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Escape screen.unity
     guid: cdf758e1fdc593a468a317d386b25aeb
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: cdcdf04a9b16fc7469f28531b319e375
   m_configObjects: {}
