@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class LeverPulling : Interactible
 {
+    public static bool LeverPulled = false;
     public GameObject LeverDown;
     public GameObject LeverUp;
-    public GameObject cube;
-    public bool LeverPulled = false;
     
     void Start()
     {
@@ -20,8 +19,6 @@ public class LeverPulling : Interactible
         LeverPulled = !LeverPulled;
         print("Lever was pulled " + LeverPulled);
         UpdateStateOfLever();
-        cube.SetActive(false);
-SceneManager.LoadScene("Dungeon");
     }
 
     private void UpdateStateOfLever()

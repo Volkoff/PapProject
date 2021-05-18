@@ -9,7 +9,6 @@ public class Chest : Interactible
     protected override void OnInteracted()
     {
         base.OnInteracted();
-	    print("test");
         SceneManager.LoadScene("Dungeon");
     }
 } 

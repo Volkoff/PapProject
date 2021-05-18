@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FloorDungeon : LeverPulling
+public class FloorDungeon : MonoBehaviour
 {
     private IEnumerator coroutine;
     bool isPlayerInRange = false;
@@ -28,7 +28,7 @@ public class FloorDungeon : LeverPulling
 
     private void Restart(bool isPlayerInRange)
     {
-        if(isPlayerInRange && LeverPulled)
+        if(isPlayerInRange && LeverPulling.LeverPulled)
         {
             reset();
         } else
@@ -46,10 +46,5 @@ public class FloorDungeon : LeverPulling
         yield return new WaitForSeconds(seconds);
         obj.SetActive(false);
         reset();
-    }
-    void Update()
-    {
-        
-        
     }
 }
