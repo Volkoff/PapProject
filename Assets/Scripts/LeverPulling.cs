@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class LeverPulling : Interactible
@@ -20,6 +21,7 @@ public class LeverPulling : Interactible
         print("Lever was pulled " + LeverPulled);
         UpdateStateOfLever();
         cube.SetActive(false);
+SceneManager.LoadScene("Dungeon");
     }
 
     private void UpdateStateOfLever()

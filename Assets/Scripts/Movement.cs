@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
 {
     public float camRotY;
     public float speed = 0.02f;
-    public float jumpForce = 10f;
+    public float jumpForce = 5f;
     public float sensitivity = 2;
     int check;
 
@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    string PrevScene = "Level1";
+    public string PrevScene = "Level1";
     void SceneManage(int check){
         if(check == 1){
             SceneManager.LoadScene("Escape screen");
