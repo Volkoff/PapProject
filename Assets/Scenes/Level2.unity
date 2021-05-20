@@ -1653,11 +1653,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camRotY: 0
-  speed: 0.08
-  jumpForce: 4
+  speed: 0.02
+  jumpForce: 5
   sensitivity: 2
   jump: {x: 0, y: 2, z: 0}
   isGrounded: 0
+  PrevScene: Level1
 --- !u!54 &1322099331
 Rigidbody:
   m_ObjectHideFlags: 0

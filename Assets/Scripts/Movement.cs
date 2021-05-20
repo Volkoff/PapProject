@@ -58,6 +58,12 @@ public class Movement : MonoBehaviour
             check = 2;
             SceneManage(check);
         }
+        if(Input.GetKeyDown("escape") && SceneManager.GetActiveScene().name == "Dungeon"){
+            check = 1;
+            PrevScene = SceneManager.GetActiveScene().name;
+            SceneManage(check);
+        }
+         
         if (Input.GetAxis("Horizontal") != 0)
         {
             gameObject.transform.Translate(speed * Input.GetAxis("Horizontal"), 0, 0);
