@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour
     public float jumpForce = 5f;
     public float sensitivity = 2;
     private float sprintTimer = 0f;
+    public GameObject LightningLantern;
+    bool lightning = false;
 
     bool sprinting = true;
     int check;
@@ -63,7 +65,9 @@ public class Movement : MonoBehaviour
             PrevScene = SceneManager.GetActiveScene().name;
             SceneManage(check);
         }
-         
+         if (Input.GetMouseButtonDown(1)){
+             lightningLantern();
+         }
         if (Input.GetAxis("Horizontal") != 0)
         {
             gameObject.transform.Translate(speed * Input.GetAxis("Horizontal"), 0, 0);
@@ -94,6 +98,11 @@ public class Movement : MonoBehaviour
                 speed = 0.02f;
             }
         } 
+}
+
+void lightningLantern(){
+    lightning = !lightning;
+    LightningLantern.SetActive(lightning);
 }
 void updateTimer(){
             if(sprintTimer >=3){
