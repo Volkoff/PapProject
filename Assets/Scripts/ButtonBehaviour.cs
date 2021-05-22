@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class ButtonBehaviour : Movement
+
+public class ButtonBehaviour : EscapeMenu
 {
     void Start()
     {
@@ -11,8 +12,7 @@ public class ButtonBehaviour : Movement
     }
     public void ResumeClick()
     {
-        SceneManager.LoadScene(PrevScene);
-        //Cursor.visible = false;
+        Resume();
     }
     public void NewGameClick()
     {
