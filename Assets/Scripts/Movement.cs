@@ -60,6 +60,7 @@ public class Movement : MonoBehaviour
         
         if (Input.GetKey(KeyCode.LeftShift) && isGrounded) 
         {   
+
             if(sprinting){
                 Invoke("updateTimer",1);
                 sprinting = false;
@@ -69,19 +70,22 @@ public class Movement : MonoBehaviour
             }else{
                 speed = 0.02f;
             }
-        } 
+        }
+        else
+        {
+            speed = 0.02f;
+        }
 }
 
-void lightningLantern(){
-    lightning = !lightning;
-    LightningLantern.SetActive(lightning);
+    void lightningLantern(){
+        lightning = !lightning;
+        LightningLantern.SetActive(lightning);
 }
-void updateTimer(){
+    void updateTimer(){
             if(sprintTimer >=3){
                 sprintTimer = 0;
             }
             sprintTimer++;
             sprinting = true;
-            
         }
 }
