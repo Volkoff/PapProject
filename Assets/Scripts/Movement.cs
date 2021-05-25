@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
 {
     public float camRotY;
     public float speed = 0.02f;
-    public float jumpForce = 5f;
+    public float jumpForce = 2f;
     public float sensitivity = 2;
     public GameObject LightningLantern;
     bool lightning = false;

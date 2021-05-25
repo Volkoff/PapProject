@@ -38,6 +38,7 @@ public class EscapeMenu : MonoBehaviour
         EscapeScreenUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        Cursor.visible = false;
     }
 
     public void Pause()
