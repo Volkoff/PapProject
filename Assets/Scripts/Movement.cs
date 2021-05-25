@@ -8,11 +8,12 @@ public class Movement : MonoBehaviour
     public float speed = 0.02f;
     public float jumpForce = 5f;
     public float sensitivity = 2;
-    private float sprintTimer = 0f;
     public GameObject LightningLantern;
     bool lightning = false;
 
-    bool sprinting = true;
+    private float sprintTimer = 0;
+    private float sprintRest = 0;
+
     private IEnumerator coroutine;
 
     public Vector3 jump = new Vector3(0.0f, 2.0f, 0.0f);
@@ -58,22 +59,29 @@ public class Movement : MonoBehaviour
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
         }
         
-        if (Input.GetKey(KeyCode.LeftShift) && isGrounded) 
-        {   
-
-            if(sprinting){
-                Invoke("updateTimer",1);
-                sprinting = false;
-            }
-            if(sprintTimer<3){
-                speed = 0.06f;
-            }else{
+        if (Input.GetKey(KeyCode.LeftShift) && isGrounded && sprintTimer<3) 
+        {
+            speed = 0.06f;
+            sprintTimer += Time.deltaTime;
+            if (sprintTimer >= 3)
+            {   
                 speed = 0.02f;
             }
         }
         else
         {
             speed = 0.02f;
+            if (!Input.GetKey(KeyCode.LeftShift))
+            {
+                sprintRest += Time.deltaTime;
+            if (sprintRest >= 3)
+            {
+                sprintTimer = 0;
+                sprintRest = 0;
+            }
+
+            }
+            
         }
 }
 
@@ -81,11 +89,5 @@ public class Movement : MonoBehaviour
         lightning = !lightning;
         LightningLantern.SetActive(lightning);
 }
-    void updateTimer(){
-            if(sprintTimer >=3){
-                sprintTimer = 0;
-            }
-            sprintTimer++;
-            sprinting = true;
-        }
+   
 }
