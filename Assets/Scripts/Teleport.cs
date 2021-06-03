@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class Chest : Interactible
+public class Teleport : Interactible
 {
-    public GameObject Finish;
+    public string sceneName;
     protected override void OnInteracted()
     {
         base.OnInteracted();
-        SceneManager.LoadScene("Dungeon");
+        SceneManager.LoadScene(sceneName);
     }
 } 

@@ -58,36 +58,32 @@ public class Movement : MonoBehaviour
             isGrounded = false;
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
         }
-        
-        if (Input.GetKey(KeyCode.LeftShift) && isGrounded && sprintTimer<3) 
+        Sprinting();
+    }
+
+    void Sprinting()
+    {
+    if (Input.GetKey(KeyCode.LeftShift) && isGrounded && sprintTimer<3) 
         {
             speed = 0.06f;
             sprintTimer += Time.deltaTime;
-            if (sprintTimer >= 3)
-            {   
-                speed = 0.02f;
-            }
         }
         else
         {
             speed = 0.02f;
-            if (!Input.GetKey(KeyCode.LeftShift))
-            {
-                sprintRest += Time.deltaTime;
+            sprintRest += Time.deltaTime;
             if (sprintRest >= 3)
             {
                 sprintTimer = 0;
                 sprintRest = 0;
             }
-
-            }
-            
         }
-}
+    }
 
-    void lightningLantern(){
+    void lightningLantern()
+    {
         lightning = !lightning;
         LightningLantern.SetActive(lightning);
-}
+    }
    
 }
