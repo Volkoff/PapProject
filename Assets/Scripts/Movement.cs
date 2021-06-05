@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         camRotY += sensitivity * Input.GetAxis("Mouse X");
         transform.localEulerAngles = new Vector3(0, camRotY, 0);
@@ -65,12 +65,12 @@ public class Movement : MonoBehaviour
     {
     if (Input.GetKey(KeyCode.LeftShift) && isGrounded && sprintTimer<3) 
         {
-            speed = 0.06f;
+            speed = 1.5f;
             sprintTimer += Time.deltaTime;
         }
         else
         {
-            speed = 3f;
+            speed = 0.5f;
             sprintRest += Time.deltaTime;
             if (sprintRest >= 3)
             {
