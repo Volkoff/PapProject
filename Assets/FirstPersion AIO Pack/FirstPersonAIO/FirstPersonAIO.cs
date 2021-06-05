@@ -332,7 +332,7 @@ public class FirstPersonAIO : MonoBehaviour {
 
         #endregion
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+      /*  if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
             {
@@ -346,7 +346,7 @@ public class FirstPersonAIO : MonoBehaviour {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
             }
-        }
+        }*/
     }
 
     private void FixedUpdate(){
@@ -770,35 +770,6 @@ public class FirstPersonAIO : MonoBehaviour {
 
     }
 
-    public static bool isPaused = false;
-
-    public GameObject EscapeScreenUI;
-
-    public void Resume()
-    {
-        ControllerPause();
-        EscapeScreenUI.SetActive(false);
-        Time.timeScale = 1f;
-        isPaused = false;
-        Cursor.visible = false;
-    }
-
-    public void Pause()
-    {
-        EscapeScreenUI.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
-    }
-
-    public void NewGameClick()
-    {
-        SceneManager.LoadScene("Level1");
-    }
-
-    public void ExitClick()
-    {
-        Application.Quit();
-    }
 
 
 }

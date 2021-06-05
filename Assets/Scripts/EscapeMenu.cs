@@ -46,9 +46,21 @@ public class EscapeMenu : MonoBehaviour
         isPaused = true;
     }
 
-    public void NewGameClick()
+    public void Save()
     {
-        SceneManager.LoadScene("Level1");
+        PlayerPrefs.SetFloat("Xvalue", transform.position.x);
+        PlayerPrefs.SetFloat("Yvalue", transform.position.y);
+        PlayerPrefs.SetFloat("Zvalue", transform.position.z);
+        PlayerPrefs.Save();
+
+    }
+
+    public void Load()
+    {
+        float positionX = PlayerPrefs.GetFloat("Xvalue");
+        float positionY = PlayerPrefs.GetFloat("Yvalue");
+        float positionZ = PlayerPrefs.GetFloat("Zvalue");
+        transform.position = new Vector3(positionX, positionY, positionZ);
     }
 
     public void ExitClick()
