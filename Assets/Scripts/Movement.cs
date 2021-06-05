@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float camRotY;
-    public float speed = 0.02f;
+    public float speed;
     public float jumpForce = 2f;
     public float sensitivity = 2;
     public GameObject LightningLantern;
@@ -70,7 +70,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            speed = 0.02f;
+            speed = 3f;
             sprintRest += Time.deltaTime;
             if (sprintRest >= 3)
             {
