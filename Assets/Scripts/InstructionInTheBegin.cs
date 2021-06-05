@@ -5,6 +5,10 @@ using UnityEngine;
 public class InstructionInTheBegin : Interactible
 {
     public GameObject instructions;
+    void start()
+    {
+        instructions.SetActive(false);
+    }
     private void OnTriggerEnter()
     {
         instructions.SetActive(true);
@@ -13,9 +17,5 @@ public class InstructionInTheBegin : Interactible
     private void OnTriggerExit()
     {
         instructions.SetActive(false);
-    }
-    void Update()
-    {
-        
     }
 }
