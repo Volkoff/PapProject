@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float camRotY;
-    public float speed;
+    public float speed = 0.3f;
     public float jumpForce = 2f;
     public float sensitivity = 2;
     public GameObject LightningLantern;
@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         camRotY += sensitivity * Input.GetAxis("Mouse X");
         transform.localEulerAngles = new Vector3(0, camRotY, 0);
@@ -65,12 +65,12 @@ public class Movement : MonoBehaviour
     {
     if (Input.GetKey(KeyCode.LeftShift) && isGrounded && sprintTimer<3) 
         {
-            speed = 1.5f;
+            speed = 0.7f;
             sprintTimer += Time.deltaTime;
         }
         else
         {
-            speed = 0.5f;
+            speed = 0.3f;
             sprintRest += Time.deltaTime;
             if (sprintRest >= 3)
             {
