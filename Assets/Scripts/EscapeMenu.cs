@@ -8,11 +8,9 @@ public class EscapeMenu : MonoBehaviour
     public static bool isPaused = false;
 
     public GameObject EscapeScreenUI;
-    private Rigidbody rb;
-  
+
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
