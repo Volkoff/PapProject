@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FloorDungeon : LeverPulling
+public class FloorDungeon : Checkpoint
 {
     private IEnumerator coroutine;
     bool isPlayerInRange = false;
@@ -14,7 +14,7 @@ public class FloorDungeon : LeverPulling
         if(other.tag == "Player")
         {
             isPlayerInRange = true;
-            Restart(isPlayerInRange);
+            reset();
         }
     }
     private void OnTriggerExit(Collider other)
@@ -22,29 +22,20 @@ public class FloorDungeon : LeverPulling
         if(other.tag == "Player")
         {
             isPlayerInRange = false;
-            Restart(isPlayerInRange);
         }
     }
-
-    private void Restart(bool isPlayerInRange)
-    {
-        if(isPlayerInRange && LeverPulling.LeverPulled)
-        {
-            reset();
-        } else
-        {
-            tip.SetActive(true);
-            coroutine = RemoveAfterSeconds(2,tip);
-            StartCoroutine(coroutine);
-        } 
-    }
-        
     private void reset(){
-        SceneManager.LoadScene(sceneName:"Dungeon");
-    }
-    IEnumerator RemoveAfterSeconds (int seconds, GameObject obj){
-        yield return new WaitForSeconds(seconds);
-        obj.SetActive(false);
-        reset();
+        if (isFirstPartDone)
+        {
+            float positionX = PlayerPrefs.GetFloat("Xvalue");
+            float positionY = PlayerPrefs.GetFloat("Yvalue");
+            float positionZ = PlayerPrefs.GetFloat("Zvalue");
+            transform.position = new Vector3(positionX, positionY, positionZ);
+        }
+        else
+        {
+       SceneManager.LoadScene(sceneName:"Dungeon");
+        }
+        
     }
 }

@@ -46,6 +46,10 @@ public class EscapeMenu : MonoBehaviour
         isPaused = true;
     }
 
+    public void NewGame()
+    {
+        SceneManager.LoadScene(sceneName: "Level1");
+    }
     public void Save()
     {
         PlayerPrefs.SetFloat("Xvalue", transform.position.x);
@@ -65,6 +69,6 @@ public class EscapeMenu : MonoBehaviour
 
     public void ExitClick()
     {
-        Application.Quit();
+        SceneManager.LoadScene(sceneName: "MainMenu");
     }
 }
