@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FloorDungeon : Checkpoint
+public class FloorDungeon : Interactible
 {
     private IEnumerator coroutine;
     bool isPlayerInRange = false;
@@ -25,7 +25,7 @@ public class FloorDungeon : Checkpoint
         }
     }
     private void reset(){
-        if (isFirstPartDone)
+        if (Checkpoint.isFirstPartDone)
         {
             float positionX = PlayerPrefs.GetFloat("Xvalue");
             float positionY = PlayerPrefs.GetFloat("Yvalue");

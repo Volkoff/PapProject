@@ -5,7 +5,7 @@ using UnityEngine;
 public class Checkpoint : Interactible
 {
 
-    public bool isFirstPartDone = false;
+    public static bool isFirstPartDone = false;
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
