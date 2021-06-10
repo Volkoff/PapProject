@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FloorDungeon : Interactible
+public class FloorDungeon : MonoBehaviour
 {
     private IEnumerator coroutine;
     bool isPlayerInRange = false;

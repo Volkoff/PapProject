@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadGame()
     {
-
+        SceneManager.LoadScene(sceneName:PlayerPrefs.GetString("CurrentScene"));
     }
 
     public void Help()

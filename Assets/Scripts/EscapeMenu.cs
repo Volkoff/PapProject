@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class EscapeMenu : MonoBehaviour
 {
     public static bool isPaused = false;
-
+    public static string NowScene = "Level1";
     public GameObject EscapeScreenUI;
 
     void Start()
@@ -52,6 +52,8 @@ public class EscapeMenu : MonoBehaviour
     }
     public void Save()
     {
+        NowScene = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetString("CurrentScene", NowScene);
         PlayerPrefs.SetFloat("Xvalue", transform.position.x);
         PlayerPrefs.SetFloat("Yvalue", transform.position.y);
         PlayerPrefs.SetFloat("Zvalue", transform.position.z);
