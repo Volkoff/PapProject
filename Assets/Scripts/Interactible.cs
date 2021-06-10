@@ -16,7 +16,7 @@ public class Interactible : MonoBehaviour
         if(other.tag == "Player")
         {
             isPlayerInRange = true;
-            instruction.SetActive(true);
+            instruction?.SetActive(true);
         }
     }
 
@@ -25,7 +25,7 @@ public class Interactible : MonoBehaviour
         if(other.tag == "Player")
         {
             isPlayerInRange = false;
-            instruction.SetActive(false);
+            instruction?.SetActive(false);
         }
     }
 

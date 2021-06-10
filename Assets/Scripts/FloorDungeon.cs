@@ -14,7 +14,7 @@ public class FloorDungeon : Interactible
         if(other.tag == "Player")
         {
             isPlayerInRange = true;
-            reset();
+            reset(other);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -24,13 +24,13 @@ public class FloorDungeon : Interactible
             isPlayerInRange = false;
         }
     }
-    private void reset(){
+    private void reset(Collider player){
         if (Checkpoint.isFirstPartDone)
         {
             float positionX = PlayerPrefs.GetFloat("Xvalue");
             float positionY = PlayerPrefs.GetFloat("Yvalue");
             float positionZ = PlayerPrefs.GetFloat("Zvalue");
-            transform.position = new Vector3(positionX, positionY, positionZ);
+            player.transform.position = new Vector3(positionX, positionY, positionZ);
         }
         else
         {
