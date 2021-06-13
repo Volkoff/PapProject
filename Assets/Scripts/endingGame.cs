@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class endingGame : MonoBehaviour
+public class endingGame : Interactible
 {
-    // Start is called before the first frame update
-    void Start()
+    public string SceneName;
+    public GameObject theEndText;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Player")
+        {
+            RemoveAfterSeconds(5, theEndText, SceneName);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator RemoveAfterSeconds(int seconds, GameObject obj, string SceneName)
     {
-        
+        yield return new WaitForSeconds(seconds);
+        obj.SetActive(false);
+        SceneManager.LoadScene(sceneName:SceneName);
     }
 }
