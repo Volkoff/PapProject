@@ -1763,6 +1763,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 459816, guid: aae542b8a65f39b49b008fa689ce9804, type: 3}
   m_PrefabInstance: {fileID: 345433184}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &336083129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,6 +1886,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> d92f9cc07d74e0f9ed1bdf315e7978e28155581a
 --- !u!4 &337764424 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 418198, guid: 393b236c42954a640b513d46de90ac38, type: 3}
@@ -8886,6 +8889,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 459816, guid: aae542b8a65f39b49b008fa689ce9804, type: 3}
   m_PrefabInstance: {fileID: 1355531190}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1771186908
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 86d47f505dfc83e408a62b64dbe0a5f7, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86d47f505dfc83e408a62b64dbe0a5f7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 909.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86d47f505dfc83e408a62b64dbe0a5f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86d47f505dfc83e408a62b64dbe0a5f7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -108.07
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86d47f505dfc83e408a62b64dbe0a5f7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86d47f505dfc83e408a62b64dbe0a5f7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86d47f505dfc83e408a62b64dbe0a5f7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86d47f505dfc83e408a62b64dbe0a5f7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86d47f505dfc83e408a62b64dbe0a5f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86d47f505dfc83e408a62b64dbe0a5f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 86d47f505dfc83e408a62b64dbe0a5f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86d47f505dfc83e408a62b64dbe0a5f7, type: 3}
+      propertyPath: m_Name
+      value: AfuckingBoatYEa (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86d47f505dfc83e408a62b64dbe0a5f7, type: 3}
+--- !u!1 &1771186909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 86d47f505dfc83e408a62b64dbe0a5f7, type: 3}
+  m_PrefabInstance: {fileID: 1771186908}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1771186910
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771186909}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 19.334534
+  m_Center: {x: 1.2668457, y: 0, z: 0}
+--- !u!114 &1771186911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771186909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9ced509ed300142a9f7243053024f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instruction: {fileID: 0}
+  SceneName: 
+  theEndText: {fileID: 2114287872}
 --- !u!4 &1779650659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 418198, guid: 393b236c42954a640b513d46de90ac38, type: 3}
